@@ -25,3 +25,25 @@ const
 <img width="815" height="267" alt="image" src="https://github.com/user-attachments/assets/cb6f7634-d90b-4cb9-ac52-051d315ea364" />
 
 
+##Data Types in JavaScript
+
+Primitive Data Types:
+
+Primitive data types store simple single values.
+
+JavaScript has 7 primitive data types:
+
+String,
+Number,
+Boolean,
+Undefined,
+Null,
+BigInt,
+Symbol,
+
+
+Non-Primitive Data Types:
+
+Non-primitive data types can store multiple values or complex data.
+
+The main non-primitive type is:Object
