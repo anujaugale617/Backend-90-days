@@ -43,6 +43,7 @@ Logical operators are used to determine the logic between variables or values.
 #JavaScript Controlling(Looping) Statements
 
 • for - loops through a block of code a specified number of times
+
 <img width="519" height="159" alt="image" src="https://github.com/user-attachments/assets/20403ec2-4d18-4975-9571-0447e3c4dfae" />
 
 
