@@ -1,4 +1,4 @@
-# JavaScript Short Notes (Simple Language)
+
 
 # 1. Functions
 
