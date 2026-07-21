@@ -331,3 +331,251 @@ Without `appendChild()`, the element stays only in memory.
 * `setAttribute()` → Add attributes
 * `style` → Change CSS
 
+
+
+
+
+# JavaScript DOM Manipulation 
+
+## 1. What is DOM Manipulation?
+
+DOM Manipulation means using **JavaScript to create, update, replace, or remove HTML elements** on a webpage without reloading it. 
+
+---
+
+# 2. Create a New HTML Element
+
+Use `createElement()` to create a new element.
+
+```javascript
+const li = document.createElement("li");
+```
+
+* Creates a new `<li>` element.
+* It is created in memory only.
+* It is **not visible** until added to the webpage.
+
+---
+
+# 3. Add Text to an Element
+
+### Method 1: Using `innerHTML`
+
+```javascript
+li.innerHTML = "Python";
+```
+
+* Adds HTML or text inside the element.
+* Easy to use.
+* Less efficient for large projects.
+
+---
+
+### Method 2: Using `createTextNode()` (Recommended)
+
+```javascript
+li.appendChild(document.createTextNode("Python"));
+```
+
+* Creates a text node.
+* More optimized.
+* Better for large applications. 
+
+---
+
+# 4. Add Element to Webpage
+
+```javascript
+document.querySelector(".language").appendChild(li);
+```
+
+* Selects the parent element.
+* Adds the new element at the end.
+
+---
+
+# 5. Create a Function to Add Languages
+
+```javascript
+function addLanguage(lang){
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(lang));
+    document.querySelector(".language").appendChild(li);
+}
+```
+
+Example:
+
+```javascript
+addLanguage("Python");
+addLanguage("TypeScript");
+```
+
+Benefits:
+
+* Reusable code.
+* Cleaner and easier to manage. 
+
+---
+
+# 6. Why Avoid `innerHTML`?
+
+Using `innerHTML`:
+
+* Recreates HTML content.
+* Browser may traverse and rebuild the DOM.
+* Slower in large projects.
+
+Using:
+
+* `createElement()`
+* `createTextNode()`
+* `appendChild()`
+
+is more efficient. 
+
+---
+
+# 7. Select an Element
+
+```javascript
+const secondLanguage =
+document.querySelector("li:nth-child(2)");
+```
+
+* Selects the second list item.
+* `querySelector()` supports CSS selectors.
+
+---
+
+# 8. Edit an Element
+
+### Method 1: Using `innerHTML`
+
+```javascript
+secondLanguage.innerHTML = "Mojo";
+```
+
+Changes only the content.
+
+---
+
+### Method 2: Replace Entire Element
+
+```javascript
+const newLi = document.createElement("li");
+newLi.textContent = "Mojo";
+
+secondLanguage.replaceWith(newLi);
+```
+
+* Creates a new element.
+* Replaces the old element.
+* Cleaner and more flexible. 
+
+---
+
+# 9. `textContent`
+
+```javascript
+newLi.textContent = "Mojo";
+```
+
+* Adds only text.
+* Does not parse HTML.
+* Safe and simple.
+
+---
+
+# 10. `replaceWith()`
+
+```javascript
+element.replaceWith(newElement);
+```
+
+* Replaces an existing element with a new one.
+
+---
+
+# 11. `outerHTML`
+
+```javascript
+firstLanguage.outerHTML =
+"<li>TypeScript</li>";
+```
+
+* Replaces the entire HTML element.
+* Not just the text.
+
+---
+
+# 12. Remove an Element
+
+```javascript
+const lastLanguage =
+document.querySelector("li:last-child");
+
+lastLanguage.remove();
+```
+
+* Removes the selected element from the page.
+* Very simple and commonly used. 
+
+---
+
+# Important DOM Methods
+
+| Method             | Purpose                       |
+| ------------------ | ----------------------------- |
+| `createElement()`  | Create new HTML element       |
+| `createTextNode()` | Create a text node            |
+| `appendChild()`    | Add child element             |
+| `querySelector()`  | Select an element             |
+| `innerHTML`        | Get/Set HTML content          |
+| `textContent`      | Get/Set text only             |
+| `replaceWith()`    | Replace an element            |
+| `outerHTML`        | Replace complete HTML element |
+| `remove()`         | Delete an element             |
+
+---
+
+# `innerHTML` vs `textContent`
+
+| innerHTML          | textContent            |
+| ------------------ | ---------------------- |
+| Reads/Writes HTML  | Reads/Writes only text |
+| Supports HTML tags | Does not support HTML  |
+| Slightly slower    | Faster and safer       |
+
+---
+
+# Interview Points
+
+* `createElement()` creates a new HTML element.
+* `appendChild()` adds an element to the DOM.
+* `createTextNode()` creates a text node.
+* `querySelector()` selects an element using CSS selectors.
+* `replaceWith()` replaces an existing element.
+* `remove()` deletes an element.
+* `textContent` is safer than `innerHTML` for plain text.
+* Prefer `createElement()` + `appendChild()` over `innerHTML` for better performance in large projects. 
+
+---
+
+# Quick Revision 
+
+* DOM Manipulation = Change webpage using JavaScript.
+* `createElement()` → Create element.
+* `createTextNode()` → Create text.
+* `appendChild()` → Add element.
+* `querySelector()` → Select element.
+* `innerHTML` → Change HTML.
+* `textContent` → Change text only.
+* `replaceWith()` → Replace element.
+* `outerHTML` → Replace complete HTML.
+* `remove()` → Delete element.
+* Use optimized methods (`createElement()`, `appendChild()`) instead of relying only on `innerHTML`.
+
+
+
+
